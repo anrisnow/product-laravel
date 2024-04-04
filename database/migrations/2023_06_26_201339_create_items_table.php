@@ -14,9 +14,12 @@ return new class extends Migration
         Schema::create('items', function (Blueprint $table) {
             $table->id();
             $table->bigInteger('user_id')->unsigned()->index();
-            $table->string('name', 100)->index();
-            $table->string('type', 100)->nullable();
-            $table->string('detail', 500)->nullable();
+            $table->tinyInteger('genre')->unsigned()->index();
+            $table->string('title',200);
+            $table->date('purchase_date');
+            $table->tinyInteger('medium')->unsigned()->index();
+            $table->tinyInteger('reading_status')->unsigned()->index();
+            $table->string('detail',1000)->nullable();
             $table->timestamps();
         });
     }
