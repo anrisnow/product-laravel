@@ -1,6 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ItemController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -19,10 +22,14 @@ use Illuminate\Support\Facades\Route;
 
 Auth::routes();
 
-Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/', [ItemController::class, 'index'])->name('home');
 
+// アイテム表示・登録・編集・削除
 Route::prefix('items')->group(function () {
-    Route::get('/', [App\Http\Controllers\ItemController::class, 'index']);
-    Route::get('/add', [App\Http\Controllers\ItemController::class, 'add']);
-    Route::post('/add', [App\Http\Controllers\ItemController::class, 'add']);
+    Route::get('/add', [ItemController::class, 'add']);
+    Route::post('/add', [ItemController::class, 'add']);
+    Route::get('/detail/{id}', [ItemController::class, 'detail'])->name('item.detail');
+    Route::get('/edit/{id}', [ItemController::class, 'edit'])->name('item.edit');
+    Route::post('/update/{id}', [ItemController::class, 'update'])->name('item.update');
+    Route::post('/destroy/{id}', [ItemController::class, 'destroy'])->name('item.destroy');
 });
