@@ -1,9 +1,9 @@
 @extends('adminlte::page')
 
-@section('title', '商品登録')
+@section('title', '書籍登録')
 
 @section('content_header')
-    <h1>商品登録</h1>
+    <h1>書籍登録</h1>
 @stop
 
 @section('content')
@@ -12,9 +12,9 @@
             @if ($errors->any())
                 <div class="alert alert-danger">
                     <ul>
-                       @foreach ($errors->all() as $error)
-                          <li>{{ $error }}</li>
-                       @endforeach
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
                     </ul>
                 </div>
             @endif
@@ -24,18 +24,45 @@
                     @csrf
                     <div class="card-body">
                         <div class="form-group">
-                            <label for="name">名前</label>
-                            <input type="text" class="form-control" id="name" name="name" placeholder="名前">
+                            <label for="title">タイトル</label>
+                            <input type="text" class="form-control" id="title" name="title" placeholder="タイトル">
                         </div>
 
                         <div class="form-group">
-                            <label for="type">種別</label>
-                            <input type="text" class="form-control" id="type" name="type" placeholder="種別">
+                            <label for="author">著者</label>
+                            <input type="text" class="form-control" id="author" name="author" placeholder="著者">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="genre">ジャンル</label>
+                            <select id="genre" name="genre" class="form-control">
+                                @foreach($genres as $key => $genre)
+                                <option value="{{ $key }}">{{ $genre }}</option>
+                                @endforeach
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="medium">媒体</label>
+                            <select id="medium" name="medium" class="form-control">
+                                @foreach($media as $key => $medium)
+                                <option value="{{ $key }}">{{ $medium }}</option>
+                                @endforeach
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="reading_status">読破状況</label>
+                            <select id="reading_status" name="reading_status" class="form-control">
+                                @foreach($reading_statuses as $key => $reading_status)
+                                <option value="{{ $key }}">{{ $reading_status }}</option>
+                                @endforeach
+                            </select>
                         </div>
 
                         <div class="form-group">
                             <label for="detail">詳細</label>
-                            <input type="text" class="form-control" id="detail" name="detail" placeholder="詳細説明">
+                            <textarea class="form-control" id="detail" name="detail" row="5" placeholder="詳細説明"></textarea>
                         </div>
                     </div>
 
@@ -46,6 +73,12 @@
             </div>
         </div>
     </div>
+<p>
+    <a class="link-dark link-opacity-50-hover link-underline-opacity-50-hover" href="{{ route('home') }}">
+        書籍一覧に戻る
+    </a>
+</p>
+
 @stop
 
 @section('css')
