@@ -25,12 +25,12 @@
                     <div class="card-body">
                         <div class="form-group">
                             <label for="title">タイトル</label>
-                            <input type="text" class="form-control" id="title" name="title" placeholder="タイトル">
+                            <input type="text" class="form-control" id="title" name="title" value="{{ old('title') }}" placeholder="タイトル">
                         </div>
 
                         <div class="form-group">
                             <label for="author">著者</label>
-                            <input type="text" class="form-control" id="author" name="author" placeholder="著者">
+                            <input type="text" class="form-control" id="author" name="author" value="{{ old('author') }}" placeholder="著者">
                         </div>
 
                         <div class="form-group">
@@ -62,7 +62,7 @@
 
                         <div class="form-group">
                             <label for="detail">詳細</label>
-                            <textarea class="form-control" id="detail" name="detail" row="5" placeholder="詳細説明"></textarea>
+                            <textarea class="form-control" id="detail" name="detail" row="5" value="{{ old('detail') }}" placeholder="詳細説明"></textarea>
                         </div>
                     </div>
 
