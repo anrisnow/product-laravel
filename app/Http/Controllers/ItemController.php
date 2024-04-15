@@ -78,7 +78,7 @@ class ItemController extends Controller
                 'title.required' => 'タイトルの入力は必須です。',
                 'genre.required' => 'ジャンルの選択は必須です。',
                 'title.max' => 'タイトルの入力文字数は最大100文字までです。',
-                'author.max' => 'タイトルの入力文字数は最大100文字までです。',
+                'author.max' => '著者の入力文字数は最大100文字までです。',
                 'detail.max' => '詳細欄の入力文字数は最大500文字までです。'
             ]);
 
@@ -148,7 +148,7 @@ class ItemController extends Controller
                 'title.required' => 'タイトルの入力は必須です。',
                 'genre.required' => 'ジャンルの選択は必須です。',
                 'title.max' => 'タイトルの入力文字数は最大100文字までです。',
-                'author.max' => 'タイトルの入力文字数は最大100文字までです。',
+                'author.max' => '著者の入力文字数は最大100文字までです。',
                 'detail.max' => '詳細欄の入力文字数は最大500文字までです。'
             ]);
 
