@@ -1,44 +1,27 @@
-## 商品管理システム
+# 書籍管理システム
 
-### 環境構築手順
+## 概要
+ユーザーが所持している書籍を管理するためのシステムです。  
+ユーザーがログインした状態で、書籍の情報を登録・削除・編集したり、登録した書籍情報を一覧や詳細ページで確認することができます。  
+登録できる情報としては、書籍タイトル、著者、ジャンル、媒体（紙か電子書籍か）、読破状況（未読、読書中、読了）、詳細を登録することができます。
 
-* Gitクローン
-* .env.example をコピーして .env を作成
-* MySQLのデータベース作成（名前：item_management）
-* Macの場合 .env の DB_PASSWORD を root に修正（Windowsは修正不要）
+## 主な機能
+- ログイン・ログアウト機能
+- 書籍一覧画面
+- 書籍新規登録・編集・削除機能
+- 書籍検索機能
 
-    ```INI
-    DB_PASSWORD=root
-    ```
+## 開発環境
+PHP 8.2.12  
+MySQL 8.4.0  
+Laravel 10.13.5
 
-* APP_KEY生成
+## 設計書
+[設計書ページへ](https://drive.google.com/drive/folders/1JiuySUU1SAAc9pSChLweX_jl4SOPZF7I?usp=sharing)
 
-    ```console
-    php artisan key:generate
-    ```
+## システム閲覧
+[アプリケーションページへ](https://techis-item-management01-9f6d740dc3fe.herokuapp.com/)
 
-* Composerインストール
-
-    ```console
-    composer install
-    ```
-
-* フロント環境構築
-
-    ```console
-    npm ci
-    npm run build
-    ```
-
-* マイグレーション
-
-    ```console
-    php artisan migrate
-    ```
-
-* 起動
-
-    ```console
-    php artisan serve
-    ```
-# product-laravel
+## テストアカウント情報
+メールアドレス：test1@techis.com  
+パスワード：password1
